@@ -13,7 +13,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
- 
+    - name: configure
+    - run: ./configure --host=first.cpp
     - name: make
       run: make
     - name: make check
