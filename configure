@@ -1,0 +1,18 @@
+
+    # File descriptor usage:  
+    # 0 standard input  
+    # 1 file creation  
+    # 2 errors and warnings  
+    # 3 some systems may open it to /dev/tty  
+    # 4 used on the Kubota Titan  
+    # 6 checking for... messages and results  
+    # 5 compiler messages saved in config.log  
+    if test "$silent" = yes; then  
+      exec 6>/dev/null  
+    else  
+      exec 6>&1  
+    fi  
+    exec 5>./config.log 
+————————————————
+版权声明：本文为CSDN博主「hankern」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/hankern/article/details/120583028
